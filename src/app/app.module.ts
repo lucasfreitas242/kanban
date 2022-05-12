@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainViewComponent } from './pages/main-view/main-view.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DragDropModule
+    DragDropModule,
+    NoopAnimationsModule,
+    MatSidenavModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

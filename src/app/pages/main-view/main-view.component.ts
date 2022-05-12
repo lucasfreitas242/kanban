@@ -22,6 +22,16 @@ export class MainViewComponent implements OnInit {
     ])
   ]);
 
+  public factor: Board = new Board('Test Board', [
+    new Column('', [
+      'Gráfico de Barra', 'Gráfico de Pizza', 'Gráfico Legal', 'Gráfico de Linha'
+    ])
+  ]);
+
+  factory = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Cubicpoly.svg/800px-Cubicpoly.svg.png ';
+
+  showFiller = false;
+
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -34,7 +44,6 @@ export class MainViewComponent implements OnInit {
       );
     }
   }
-  
 
   constructor() { }
 
