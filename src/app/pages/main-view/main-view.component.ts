@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {CdkDragDrop, copyArrayItem, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { Board } from 'src/app/models/board.model';
 import { Column } from 'src/app/models/column.model';
 
@@ -24,7 +24,7 @@ export class MainViewComponent implements OnInit {
 
   public factor: Board = new Board('Test Board', [
     new Column('', [
-      'Gráfico de Barra', 'Gráfico de Pizza', 'Gráfico Legal', 'Gráfico de Linha'
+      'Gráfico de Barra', 'Gráfico de Pizza', 'Gráfico de Linha'
     ])
   ]);
 
@@ -36,7 +36,7 @@ export class MainViewComponent implements OnInit {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
-      transferArrayItem(
+      copyArrayItem(
         event.previousContainer.data,
         event.container.data,
         event.previousIndex,

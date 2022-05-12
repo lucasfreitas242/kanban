@@ -8,10 +8,11 @@
     </div>
     <div class="board">
         <div class="board-wrapper">
+            <div class="board-columns" cdkDropListGroup>
                 <mat-drawer-container class="example-container" >
                     <mat-drawer-content >
                         <h2>Widgets</h2>
-                        <div class="board-column" *ngFor="let column of factor.columns">
+                        <div  *ngFor="let column of factor.columns">
                             <div class="column-title">{{column.name}}</div>
                             <div class="tasks-container"
                                 cdkDropList
@@ -19,16 +20,14 @@
                                 [cdkDropListData]="column.tasks"
                                 (cdkDropListDropped)="drop($event)">
                                 <div class="task"  *ngFor="let item of column.tasks" cdkDrag>{{item}}
-                                    <mat-card *cdkDragPreview class="card-example">
-                                        <mat-card-title  class="card-title">GRAFICÃO</mat-card-title>
-                                        <img [src]="factory" width="300px">
-                                    </mat-card>
+                                    <div>
+                                        <img [src]="factory" width="100px">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </mat-drawer-content>
                 </mat-drawer-container>
-            <div class="board-columns" cdkDropListGroup>
                 <div class="board-column" *ngFor="let column of board.columns">
                     <div class="column-title">{{column.name}}</div>
                     <div class="tasks-container"
