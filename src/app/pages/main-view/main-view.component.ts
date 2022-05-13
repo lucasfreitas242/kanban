@@ -11,20 +11,14 @@ import { Column } from 'src/app/models/column.model';
 export class MainViewComponent implements OnInit {
 
   public board: Board = new Board('Test Board', [
-    new Column('A Fazer', [
-      'Ir trabalhar', 'Ir ao mercado', 'Voltar para casa', 'Dormir'
-    ]),
-    new Column('Em Produção', [
-      'Almoçar', 'Jantar', 'Jogar', 'Estudar'
-    ]),
-    new Column('Feitas', [
-      'Levantar', 'Escovar os dentes', 'Tomar banho', 'Checar E-mails', 'Passear com o cachorro'
+    new Column('Dashboard', [
+      'Gráfico de Linha', 'Gráfico de Barra', 'Gráfico de Pizza', 'Gráfico Legal'
     ])
   ]);
 
   public factor: Board = new Board('Test Board', [
     new Column('', [
-      'Gráfico de Barra', 'Gráfico de Pizza', 'Gráfico de Linha'
+      'Gráfico de Barra', 'Gráfico de Pizza', 'Gráfico de Linha', 'Gráfico Legal'
     ])
   ]);
 
