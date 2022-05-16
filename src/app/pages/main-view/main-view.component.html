@@ -3,6 +3,8 @@
         <div class="navbar-brand">
             <div class="navbar-item">
                 <div class="app-name has-gradient-text">kanban</div>
+                <button mat-stroked-button color="primary" (click)="layoutService.addItem()">Adicionar Item</button>
+                
             </div>       
         </div>
     </div>
@@ -12,7 +14,7 @@
                 <mat-drawer-container class="example-container" >
                     <mat-drawer-content >
                         <h2>Widgets</h2>
-                        <div  *ngFor="let column of factor.columns">
+                        <div  *ngFor="let column of factor.columns" draggable="true" (dragstart)="layoutService.addItem()">
                             <div class="column-title">{{column.name}}</div>
                             <div class="tasks-container"
                                 cdkDropList
@@ -29,13 +31,19 @@
                     </mat-drawer-content>
                 </mat-drawer-container>
                 <div class="board-column" *ngFor="let column of board.columns">
-                    <div class="column-title">{{column.name}}</div>
                     <div class="tasks-container"
                         cdkDropList
                         #todoList="cdkDropList"
                         [cdkDropListData]="column.tasks"
                         (cdkDropListDropped)="drop($event)">
-                        <div class="task" *ngFor="let item of column.tasks" cdkDrag>{{item}}</div>
+                        <gridster [options]="options" (drop)="layoutService.onDrop()">
+                            <gridster-item *ngFor="let item of layout" [item]="item">
+                                <button  mat-raised-button color="primary" (click)="layoutService.deleteItem(item)">
+                                    Delete Item
+                                </button>
+                                <div  *ngFor="let item of column.tasks" >Everaldo Macedo</div>
+                            </gridster-item>
+                        </gridster>
                     </div>
                 </div>
             </div>

@@ -8,6 +8,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
+import { GridsterModule } from 'angular-gridster2';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import {MatCardModule} from '@angular/material/card';
     DragDropModule,
     NoopAnimationsModule,
     MatSidenavModule,
-    MatCardModule
+    MatCardModule,
+    GridsterModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

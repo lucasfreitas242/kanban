@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, copyArrayItem, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { Board } from 'src/app/models/board.model';
 import { Column } from 'src/app/models/column.model';
+import { GridsterConfig, GridsterItem } from 'angular-gridster2';
+import { LayoutService } from 'src/app/services/layout.service';
 
 @Component({
   selector: 'app-main-view',
@@ -39,7 +41,14 @@ export class MainViewComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  get options(): GridsterConfig {
+    return this.layoutService.options;
+  }
+  get layout(): GridsterItem[] {
+    return this.layoutService.layout;
+  }
+
+  constructor(public layoutService: LayoutService) { }
 
   ngOnInit(): void {
   }
