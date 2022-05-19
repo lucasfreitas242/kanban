@@ -10,11 +10,14 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import { GridsterModule } from 'angular-gridster2';
 import {MatButtonModule} from '@angular/material/button';
+import { HighchartComponent } from './pages/highchart/highchart.component';
+import { ChartModule } from 'angular-highcharts';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainViewComponent
+    MainViewComponent,
+    HighchartComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatSidenavModule,
     MatCardModule,
     GridsterModule,
-    MatButtonModule
+    MatButtonModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

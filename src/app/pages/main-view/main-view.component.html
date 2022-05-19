@@ -37,7 +37,9 @@
                         [cdkDropListData]="column.tasks"
                         (cdkDropListDropped)="drop($event)">
                         <gridster [options]="options" (drop)="layoutService.onDrop()">
+                            
                             <gridster-item *ngFor="let item of layout" [item]="item">
+                                <app-highchart></app-highchart>
                                 <button  mat-raised-button color="primary" (click)="layoutService.deleteItem(item)">
                                     Delete Item
                                 </button>
